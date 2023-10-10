@@ -206,12 +206,201 @@ save(hotels_vienna, file = "new.RData")
 new <- load("new.RData")
 View(new)
 
-head(hotels_vienna,6)
-#country city_actual rating_count center1label center2label
-#<chr>   <chr>       <chr>        <chr>        <chr>       
-#  1 Austria Vienna      36           City centre  Donauturm   
-#2 Austria Vienna      189          City centre  Donauturm   
-#3 Austria Vienna      53           City centre  Donauturm   
-#4 Austria Vienna      55           City centre  Donauturm   
-#5 Austria Vienna      33           City centre  Donauturm   
-#6 Austria Vienna      25           City centre  Donauturm   
+head(hotels_vienna, 6)
+#country city_actual rating_count center1label center2label neighbourhood price   city stars ratingta
+#1 Austria      Vienna           36  City centre    Donauturm   17. Hernals    81 Vienna     4      4.5
+#2 Austria      Vienna          189  City centre    Donauturm   17. Hernals    81 Vienna     4      3.5
+#3 Austria      Vienna           53  City centre    Donauturm    Alsergrund    85 Vienna     4      3.5
+#4 Austria      Vienna           55  City centre    Donauturm    Alsergrund    83 Vienna     3        4
+#5 Austria      Vienna           33  City centre    Donauturm    Alsergrund    82 Vienna     4      3.5
+#6 Austria      Vienna           25  City centre    Donauturm    Alsergrund   229 Vienna     5      4.5
+#ratingta_count scarce_room hotel_id offer    offer_cat year month weekend holiday distance distance_alter
+#1            216           1    21894     1 15-50% offer 2017    11       0       0      2.7            4.4
+#2            708           0    21897     1  1-15% offer 2017    11       0       0      1.7            3.8
+#3            629           0    21901     1 15-50% offer 2017    11       0       0      1.4            2.5
+#4             52           0    21902     1 15-50% offer 2017    11       0       0      1.7            2.5
+#5            219           1    21903     1 15-50% offer 2017    11       0       0      1.2            2.8
+#6             27           1    21904     1  1-15% offer 2017    11       0       0      0.9            3.0
+#accommodation_type nnights             rating
+#1          Apartment       1 4.4000000000000004
+#2              Hotel       1                3.9
+#3              Hotel       1                3.7
+#4              Hotel       1                  4
+#5              Hotel       1                3.9
+#6          Apartment       1                4.8
+
+#10
+#A
+vegetables <- list("cabbage", "carrot", "gabi","potato", "garlic", "corn", "onion", "broccoli", "eggplant", "cucumber")
+vegetables
+#[[1]]
+#[1] "cabbage"
+
+#[[2]]
+#[1] "carrot"
+
+#[[3]]
+#[1] "gabi"
+
+#[[4]]
+#[1] "potato"
+
+#[[5]]
+#[1] "garlic"
+
+#[[6]]
+#[1] "corn"
+
+#[[7]]
+#[1] "onion"
+
+#[[8]]
+#[1] "broccoli"
+
+#[[9]]
+#[1] "eggplant"
+
+#[[10]]
+#[1] "cucumber"
+
+#B Add 2 additional vegetables after the last vegetables in the list. What is the R script and its output?
+addvegetables <- c(vegetables, "cauliflower", "celery")
+addvegetables 
+#[1] "cabbage"
+
+#[[2]]
+#[1] "carrot"
+
+#[[3]]
+#[1] "gabi"
+
+#[[4]]
+#[1] "potato"
+
+#[[5]]
+#[1] "garlic"
+
+#[[6]]
+#[1] "corn"
+
+#[[7]]
+#[1] "onion"
+
+#[[8]]
+#[1] "broccoli"
+
+#[[9]]
+#[1] "eggplant"
+
+#[[10]]
+#[1] "cucumber"
+
+#[[11]]
+#[1] "cauliflower"
+
+#[[12]]
+#[1] "celery"
+
+#C Add 4 additional vegetables after index 5
+addvegetables4 <-append(addvegetables, c("pepper", "chayote", "pumpkin","spring onion"), after = 5)
+addvegetables4
+
+#[[1]]
+#[1] "cabbage"
+
+#[[2]]
+#[1] "carrot"
+
+#[[3]]
+#[1] "gabi"
+
+#[[4]]
+#[1] "potato"
+
+#[[5]]
+#[1] "garlic"
+
+#[[6]]
+#[1] "pepper"
+
+#[[7]]
+#[1] "chayote"
+
+#[[8]]
+#[1] "pumpkin"
+
+#[[9]]
+#[1] "spring onion"
+
+#[[10]]
+#[1] "corn"
+
+#[[11]]
+#[1] "onion"
+
+#[[12]]
+#[1] "broccoli"
+
+#[[13]]
+#[1] "eggplant"
+
+#[[14]]
+#[1] "cucumber"
+
+#[[15]]
+#[1] "cauliflower"
+
+#[[16]]
+#[1] "celery"
+num_vegetables <- length(addvegetables4)
+num_vegetables #[1] 16 data points
+
+#d.  
+addvegetables5 <- addvegetables4[-c(5,10,15)]
+addvegetables5 
+
+
+#Write the codes and its output.
+addvegetables5 <- addvegetables4[-c(5,10,15)]
+addvegetables5 
+
+#[[1]]
+#[1] "cabbage"
+
+#[[2]]
+#[1] "carrot"
+
+#[[3]]
+#[1] "gabi"
+
+#[[4]]
+#[1] "potato"
+
+#[[5]]
+#[1] "pepper"
+
+#[[6]]
+#[1] "chayote"
+
+#[[7]]
+#[1] "pumpkin"
+
+#[[8]]
+#[1] "spring onion"
+
+#[[9]]
+#[1] "onion"
+
+#[[10]]
+#[1] "broccoli"
+
+#[[11]]
+#[1] "eggplant"
+
+#[[12]]
+#[1] "cucumber"
+
+#[[13]]
+#[#1] "celery"
+num_addvegetables5 <- length(addvegetables5)
+num_addvegetables5 #[1] 13 data points
